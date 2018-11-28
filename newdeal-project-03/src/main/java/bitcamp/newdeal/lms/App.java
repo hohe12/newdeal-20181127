@@ -1,3 +1,4 @@
+package bitcamp.newdeal.lms;
 import java.sql.Date;
 import java.util.Scanner;
 
