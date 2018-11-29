@@ -13,36 +13,38 @@ public class App {
     
     int i = 0;
     while (i < LENGTH) {
-      lessons[i] = new Lesson();
+      // 클래스로 정의한 새 데이터 타입의 메모리(인스턴스) 만들기
+      Lesson lesson = new Lesson();
       
+      // 사용자가 입력한 값을 메모리에 담는다.
       System.out.print("번호? ");
-      lessons[i].no = Integer.parseInt(keyboard.nextLine());
+      lesson.no = Integer.parseInt(keyboard.nextLine());
       
       System.out.print("수업명? ");
-      lessons[i].title = keyboard.nextLine();
+      lesson.title = keyboard.nextLine();
       
       System.out.print("설명? ");
-      lessons[i].contents = keyboard.nextLine();
+      lesson.contents = keyboard.nextLine();
       
       System.out.print("시작일? ");
-      lessons[i].startDate = Date.valueOf(keyboard.nextLine());
+      lesson.startDate = Date.valueOf(keyboard.nextLine());
       
       System.out.print("종료일? ");
-      lessons[i].endDate = Date.valueOf(keyboard.nextLine());
+      lesson.endDate = Date.valueOf(keyboard.nextLine());
       
       System.out.print("총수업시간? ");
-      lessons[i].totalHours = Integer.parseInt(keyboard.nextLine());
+      lesson.totalHours = Integer.parseInt(keyboard.nextLine());
       
       System.out.print("일수업시간? ");
-      lessons[i].dayHours = Integer.parseInt(keyboard.nextLine());
+      lesson.dayHours = Integer.parseInt(keyboard.nextLine());
       
-      i++; // 배열의 인덱스를 증가시킨다.
+      // i 번째 배열에 수업 정보를 담고 있는 Lesson 객체(의 주소)를 보관한다.
+      lessons[i] = lesson;
+      i++;
       
-      // 사용자가 입력한 값을 소문자로 변환한다.
       System.out.print("\n계속 입력하시겠습니까?(Y/n) ");
       String answer = keyboard.nextLine().toLowerCase();
       
-      // 입력 값이 "Y", "y", "" 이 아니면, 입력을 종료한다. 
       if (!answer.equals("y") && answer.length() > 0) {
         break;
       }
@@ -54,10 +56,10 @@ public class App {
     
     System.out.println(); // 빈 줄 출력
     
-    // 배열에 입력한 개수만큼 출력한다.
     for (int j = 0; j < i; j++) {
       System.out.printf("%3d, %-15s, %10s ~ %10s, %4d\n", 
-          lessons[j].no, lessons[j].title, lessons[j].startDate, lessons[j].endDate, lessons[j].totalHours);
+          lessons[j].no, lessons[j].title, lessons[j].startDate, 
+          lessons[j].endDate, lessons[j].totalHours);
     }
   }
 }
