@@ -11,7 +11,6 @@ import com.eomcs.lms.domain.Board;
 public class BoardAddCommand implements Command {
 
   Scanner keyboard;
-  List<Board> list;
 
   public BoardAddCommand(Scanner keyboard) {
 
