@@ -60,3 +60,17 @@
 
  v4.5 과제 해결
 
+<<<<<<< HEAD
+=======
+ 17 : DAO 도입
+
+ 18 : DAO에 인터페이스 적용
+
+  - 다양한 dbms에 대응하여 dao를 교체할 수 있도록 하라!
+
+ 19 : SQL 삽입 공격과 자바 보안
+  
+  - SQL 삽입 공격을 이해하고 그 공격을 막아라!
+  
+  - Statement 의 createStatement() 대신  PreparedStatement()를 사용하라. 
+>>>>>>> work
